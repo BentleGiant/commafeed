@@ -253,6 +253,8 @@ export interface Settings {
     unreadCountTitle: boolean
     unreadCountFavicon: boolean
     disablePullToRefresh: boolean
+    truncateArticlesToFirstParagraph: boolean
+    truncateArticlesLength: number
     primaryColor?: string
     sharingSettings: SharingSettings
 }
