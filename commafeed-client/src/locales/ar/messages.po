@@ -17,6 +17,7 @@ msgstr ""
 msgid "<0>CommaFeed is an open-source project. Sources are hosted on </0><1>GitHub</1>."
 msgstr ""
 
+#: src/components/settings/DisplaySettings.tsx
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "<0>Complete syntax is available </0><1>here</1><2>.</2>"
 msgstr ""
@@ -121,6 +122,7 @@ msgstr "هل أنت متأكد أنك تريد إلغاء الاشتراك من 
 msgid "Asc"
 msgstr "تصاعدي"
 
+#: src/components/settings/DisplaySettings.tsx
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "Available variables are 'title', 'content', 'url' 'author' and 'categories' and their content is converted to lower case to ease string comparison."
 msgstr "المتغيرات المتاحة هي \"العنوان\" و \"المحتوى\" و \"url\" و \"المؤلف\" و \"الفئات\" ويتم تحويل محتواها إلى أحرف صغيرة لتسهيل مقارنة السلسلة."
@@ -220,6 +222,10 @@ msgstr "تأكيد"
 #: src/components/settings/ProfileSettings.tsx
 msgid "Confirm password"
 msgstr "تأكيد كلمة المرور"
+
+#: src/components/settings/DisplaySettings.tsx
+msgid "Content filtering"
+msgstr ""
 
 #: src/components/header/ProfileMenu.tsx
 msgid "Cozy"
@@ -352,6 +358,10 @@ msgstr "خطأ"
 msgid "Example: {example}."
 msgstr "مثال: {مثال}."
 
+#: src/components/settings/DisplaySettings.tsx
+msgid "Example: <0>url.contains('youtube') or (author eq 'athou' and title.contains('github'))</0>."
+msgstr ""
+
 #: src/components/header/ProfileMenu.tsx
 msgid "Expanded"
 msgstr "موسع"
@@ -419,6 +429,10 @@ msgstr "إنشاء مفتاح API جديد"
 msgid "Generated feed url"
 msgstr "رابط الخلاصة المولدة"
 
+#: src/components/settings/DisplaySettings.tsx
+msgid "Global filter expression"
+msgstr ""
+
 #. placeholder {0}: truncate(props.entry.feedName, 30)
 #: src/components/content/FeedEntryContextMenu.tsx
 msgid "Go to {0}"
@@ -455,6 +469,10 @@ msgstr "المرجع نفسه"
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "If not empty, an expression evaluating to 'true' or 'false'. If false, new entries for this feed will be marked as read automatically."
 msgstr "إذا لم يكن فارغًا ، فسيتم تقييم التعبير إلى \"صواب\" أو \"خطأ\". "
+
+#: src/components/settings/DisplaySettings.tsx
+msgid "If not empty, an expression evaluating to 'true' or 'false'. If false, new entries will be marked as read automatically."
+msgstr ""
 
 #: src/components/settings/DisplaySettings.tsx
 msgid "If the entry doesn't entirely fit on the screen"
@@ -1055,6 +1073,10 @@ msgstr "إلغاء النجم"
 msgid "Unsubscribe"
 msgstr "إلغاء الاشتراك"
 
+#: src/pages/app/FeedDetailsPage.tsx
+msgid "Use custom filter for this feed"
+msgstr ""
+
 #: src/components/settings/ProfileSettings.tsx
 msgid "User name"
 msgstr "اسم المستخدم"
@@ -1075,6 +1097,10 @@ msgstr "تحذير"
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "Website"
 msgstr "موقع الكتروني"
+
+#: src/pages/app/FeedDetailsPage.tsx
+msgid "When enabled, this feed will use its own filter instead of the global filter"
+msgstr ""
 
 #: src/components/settings/DisplaySettings.tsx
 msgid "Yellow"
