@@ -9,10 +9,13 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.InstantSource;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Stream;
+import java.util.zip.GZIPInputStream;
 
 import jakarta.inject.Singleton;
 import jakarta.ws.rs.core.CacheControl;
@@ -24,6 +27,8 @@ import org.apache.hc.client5.http.SystemDefaultDnsResolver;
 import org.apache.hc.client5.http.config.ConnectionConfig;
 import org.apache.hc.client5.http.config.RequestConfig;
 import org.apache.hc.client5.http.config.TlsConfig;
+import org.apache.hc.client5.http.entity.DeflateInputStream;
+import org.apache.hc.client5.http.entity.InputStreamFactory;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
 import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager;
@@ -41,6 +46,7 @@ import org.apache.hc.core5.http.io.support.ClassicRequestBuilder;
 import org.apache.hc.core5.http.message.BasicHeader;
 import org.apache.hc.core5.util.TimeValue;
 import org.apache.hc.core5.util.Timeout;
+import org.brotli.dec.BrotliInputStream;
 import org.jboss.resteasy.reactive.common.headers.CacheControlDelegate;
 
 import com.codahale.metrics.MetricRegistry;
@@ -287,6 +293,11 @@ public class HttpGetter {
 		headers.add(new BasicHeader(HttpHeaders.PRAGMA, "No-cache"));
 		headers.add(new BasicHeader(HttpHeaders.CACHE_CONTROL, "no-cache"));
 
+		Map<String, InputStreamFactory> contentDecoderMap = new LinkedHashMap<>();
+		contentDecoderMap.put("gzip", GZIPInputStream::new);
+		contentDecoderMap.put("deflate", DeflateInputStream::new);
+		contentDecoderMap.put("br", BrotliInputStream::new);
+
 		return HttpClientBuilder.create()
 				.useSystemProperties()
 				.disableAutomaticRetries()
@@ -296,6 +307,7 @@ public class HttpGetter {
 				.setConnectionManager(connectionManager)
 				.evictExpiredConnections()
 				.evictIdleConnections(TimeValue.of(idleConnectionsEvictionInterval))
+				.setContentDecoderRegistry(new LinkedHashMap<>(contentDecoderMap))
 				.build();
 	}
 
