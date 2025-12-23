@@ -121,6 +121,8 @@ public class UserREST {
 			s.setUnreadCountTitle(settings.isUnreadCountTitle());
 			s.setUnreadCountFavicon(settings.isUnreadCountFavicon());
 			s.setDisablePullToRefresh(settings.isDisablePullToRefresh());
+			s.setTruncateArticlesToFirstParagraph(settings.isTruncateArticlesToFirstParagraph());
+			s.setTruncateArticlesLength(settings.getTruncateArticlesLength());
 			s.setPrimaryColor(settings.getPrimaryColor());
 		} else {
 			s.setReadingMode(ReadingMode.UNREAD);
@@ -150,6 +152,8 @@ public class UserREST {
 			s.setUnreadCountTitle(false);
 			s.setUnreadCountFavicon(true);
 			s.setDisablePullToRefresh(true);
+			s.setTruncateArticlesToFirstParagraph(false);
+			s.setTruncateArticlesLength(1000);
 		}
 		return s;
 	}
@@ -186,6 +190,8 @@ public class UserREST {
 		s.setUnreadCountTitle(settings.isUnreadCountTitle());
 		s.setUnreadCountFavicon(settings.isUnreadCountFavicon());
 		s.setDisablePullToRefresh(settings.isDisablePullToRefresh());
+		s.setTruncateArticlesToFirstParagraph(settings.isTruncateArticlesToFirstParagraph());
+		s.setTruncateArticlesLength(settings.getTruncateArticlesLength());
 		s.setPrimaryColor(settings.getPrimaryColor());
 
 		s.setEmail(settings.getSharingSettings().isEmail());
