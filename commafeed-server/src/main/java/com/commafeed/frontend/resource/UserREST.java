@@ -122,7 +122,7 @@ public class UserREST {
 			s.setStarIconDisplayMode(settings.getStarIconDisplayMode());
 			s.setExternalLinkIconDisplayMode(settings.getExternalLinkIconDisplayMode());
 			s.setMarkAllAsReadConfirmation(settings.isMarkAllAsReadConfirmation());
-			s.setMarkAllAsReadNavigateToNextUnread(settings.isMarkAllAsReadNavigateToNextUnread());
+			s.setMarkAllAsReadNavigateToUnread(settings.isMarkAllAsReadNavigateToUnread());
 			s.setCustomContextMenu(settings.isCustomContextMenu());
 			s.setMobileFooter(settings.isMobileFooter());
 			s.setUnreadCountTitle(settings.isUnreadCountTitle());
@@ -153,7 +153,7 @@ public class UserREST {
 			s.setStarIconDisplayMode(IconDisplayMode.ON_DESKTOP);
 			s.setExternalLinkIconDisplayMode(IconDisplayMode.ON_DESKTOP);
 			s.setMarkAllAsReadConfirmation(true);
-			s.setMarkAllAsReadNavigateToNextUnread(false);
+			s.setMarkAllAsReadNavigateToUnread(false);
 			s.setCustomContextMenu(true);
 			s.setMobileFooter(false);
 			s.setUnreadCountTitle(false);
@@ -191,7 +191,7 @@ public class UserREST {
 		s.setStarIconDisplayMode(settings.getStarIconDisplayMode());
 		s.setExternalLinkIconDisplayMode(settings.getExternalLinkIconDisplayMode());
 		s.setMarkAllAsReadConfirmation(settings.isMarkAllAsReadConfirmation());
-		s.setMarkAllAsReadNavigateToNextUnread(settings.isMarkAllAsReadNavigateToNextUnread());
+		s.setMarkAllAsReadNavigateToUnread(settings.isMarkAllAsReadNavigateToUnread());
 		s.setCustomContextMenu(settings.isCustomContextMenu());
 		s.setMobileFooter(settings.isMobileFooter());
 		s.setUnreadCountTitle(settings.isUnreadCountTitle());
