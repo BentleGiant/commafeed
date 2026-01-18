@@ -17,7 +17,6 @@ msgstr ""
 msgid "<0>CommaFeed is an open-source project. Sources are hosted on </0><1>GitHub</1>."
 msgstr ""
 
-#: src/components/settings/DisplaySettings.tsx
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "<0>Complete syntax is available </0><1>here</1><2>.</2>"
 msgstr ""
@@ -60,6 +59,11 @@ msgstr "Dodaj użytkownika"
 #: src/pages/admin/AdminUsersPage.tsx
 msgid "Admin"
 msgstr "Administracja"
+
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Admin user name"
+msgstr ""
 
 #: src/components/content/add/CategorySelect.tsx
 #: src/components/header/Header.tsx
@@ -122,7 +126,6 @@ msgstr "Czy na pewno chcesz zrezygnować z subskrypcji <0>{feedName}</0>?"
 msgid "Asc"
 msgstr ""
 
-#: src/components/settings/DisplaySettings.tsx
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "Available variables are 'title', 'content', 'url' 'author' and 'categories' and their content is converted to lower case to ease string comparison."
 msgstr "Dostępne zmienne to „tytuł”, „treść”, „adres URL”, „autor” i „kategorie”, a ich zawartość jest konwertowana na małe litery, aby ułatwić porównanie ciągów."
@@ -139,12 +142,12 @@ msgstr "Powrót do logowania"
 msgid "Blue"
 msgstr ""
 
-#: src/components/KeyboardShortcutsHelp.tsx
-msgid "Browser extension required for Chrome"
-msgstr ""
-
 #: src/pages/app/AboutPage.tsx
 msgid "Browser extension"
+msgstr ""
+
+#: src/components/KeyboardShortcutsHelp.tsx
+msgid "Browser extension required for Chrome"
 msgstr ""
 
 #: src/components/settings/DisplaySettings.tsx
@@ -223,13 +226,13 @@ msgstr "Potwierdź"
 msgid "Confirm password"
 msgstr "Potwierdź hasło"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Content filtering"
-msgstr ""
-
 #: src/components/header/ProfileMenu.tsx
 msgid "Cozy"
 msgstr "Przytulny"
+
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Create Admin Account"
+msgstr ""
 
 #: src/components/KeyboardShortcutsHelp.tsx
 msgid "Ctrl"
@@ -315,6 +318,8 @@ msgstr "Przeciągnij link do paska zakładek"
 #: src/components/admin/UserEdit.tsx
 #: src/components/settings/ProfileSettings.tsx
 #: src/pages/admin/AdminUsersPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
 #: src/pages/auth/PasswordRecoveryPage.tsx
 #: src/pages/auth/PasswordRecoveryPage.tsx
 msgid "E-mail"
@@ -357,10 +362,6 @@ msgstr "Błąd"
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "Example: {example}."
 msgstr "Przykład: {przykład}."
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Example: <0>url.contains('youtube') or (author eq 'athou' and title.contains('github'))</0>."
-msgstr ""
 
 #: src/components/header/ProfileMenu.tsx
 msgid "Expanded"
@@ -429,10 +430,6 @@ msgstr "Wygeneruj nowy klucz API"
 msgid "Generated feed url"
 msgstr "Wygenerowany adres URL kanału"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Global filter expression"
-msgstr ""
-
 #. placeholder {0}: truncate(props.entry.feedName, 30)
 #: src/components/content/FeedEntryContextMenu.tsx
 msgid "Go to {0}"
@@ -471,10 +468,6 @@ msgid "If not empty, an expression evaluating to 'true' or 'false'. If false, ne
 msgstr "Jeśli nie jest puste, wyrażenie oceniające jako „prawda” lub „fałsz”. "
 
 #: src/components/settings/DisplaySettings.tsx
-msgid "If not empty, an expression evaluating to 'true' or 'false'. If false, new entries will be marked as read automatically."
-msgstr ""
-
-#: src/components/settings/DisplaySettings.tsx
 msgid "If the entry doesn't entirely fit on the screen"
 msgstr ""
 
@@ -492,6 +485,10 @@ msgstr "W widoku rozszerzonym przewijanie wpisów oznacza je jako przeczytane"
 
 #: src/components/settings/DisplaySettings.tsx
 msgid "Indigo"
+msgstr ""
+
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Initial Setup"
 msgstr ""
 
 #: src/components/content/FeedEntryContextMenu.tsx
@@ -666,10 +663,6 @@ msgstr ""
 msgid "Nothing found"
 msgstr "Nic nie znaleziono"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Number of characters to show when articles are truncated. Enter value between {TRUNCATE_ARTICLES_MIN}-{TRUNCATE_ARTICLES_MAX} (default {TRUNCATE_ARTICLES_DEFAULT})."
-msgstr ""
-
 #: src/pages/app/AboutPage.tsx
 msgid "Oldest first"
 msgstr "Najstarsze jako pierwsze"
@@ -688,10 +681,6 @@ msgstr ""
 
 #: src/components/settings/DisplaySettings.tsx
 msgid "Only applies to compact, cozy and detailed modes"
-msgstr ""
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Only show the first N characters of article content. Click the article link to read more."
 msgstr ""
 
 #: src/pages/ErrorPage.tsx
@@ -773,12 +762,18 @@ msgid "Parent Category"
 msgstr "Kategoria nadrzędna"
 
 #: src/components/admin/UserEdit.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
 #: src/pages/auth/LoginPage.tsx
 #: src/pages/auth/LoginPage.tsx
 #: src/pages/auth/RegistrationPage.tsx
 #: src/pages/auth/RegistrationPage.tsx
 msgid "Password"
 msgstr "Hasło"
+
+#: src/hooks/useValidationRules.ts
+msgid "Password must be at least {minimumPasswordLength} characters"
+msgstr ""
 
 #: src/pages/auth/PasswordRecoveryPage.tsx
 msgid "Password Recovery"
@@ -1042,14 +1037,6 @@ msgstr ""
 msgid "Toggle starred status of current entry"
 msgstr ""
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Truncate articles"
-msgstr ""
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Truncation length"
-msgstr ""
-
 #: src/pages/auth/LoginPage.tsx
 msgid "Try out CommaFeed with the demo account: demo/demo"
 msgstr "Wypróbuj CommaFeed z kontem demo: demo/demo"
@@ -1073,10 +1060,6 @@ msgstr ""
 msgid "Unsubscribe"
 msgstr "Anuluj subskrypcję"
 
-#: src/pages/app/FeedDetailsPage.tsx
-msgid "Use custom filter for this feed"
-msgstr ""
-
 #: src/components/settings/ProfileSettings.tsx
 msgid "User name"
 msgstr "Nazwa użytkownika"
@@ -1098,8 +1081,8 @@ msgstr "Ostrzeżenie"
 msgid "Website"
 msgstr "Strona internetowa"
 
-#: src/pages/app/FeedDetailsPage.tsx
-msgid "When enabled, this feed will use its own filter instead of the global filter"
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Welcome! This appears to be the first time you're running CommaFeed. Please create an administrator account to get started."
 msgstr ""
 
 #: src/components/settings/DisplaySettings.tsx

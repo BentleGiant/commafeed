@@ -326,10 +326,16 @@ public interface CommaFeedConfiguration {
 		boolean allowRegistrations();
 
 		/**
-		 * Whether to enable strict password validation (1 uppercase char, 1 lowercase char, 1 digit, 1 special char).
+		 * Minimum password length for user accounts.
 		 */
-		@WithDefault("true")
-		boolean strictPasswordPolicy();
+		@WithDefault("4")
+		int minimumPasswordLength();
+
+		/**
+		 * Whether an email address is required when creating a user account.
+		 */
+		@WithDefault("false")
+		boolean emailAddressRequired();
 
 		/**
 		 * Whether to create a demo account the first time the app starts.

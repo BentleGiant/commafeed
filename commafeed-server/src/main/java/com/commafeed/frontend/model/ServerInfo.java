@@ -26,6 +26,9 @@ public class ServerInfo implements Serializable {
 	private boolean allowRegistrations;
 
 	@Schema(required = true)
+	private boolean emailAddressRequired;
+
+	@Schema(required = true)
 	private boolean smtpEnabled;
 
 	@Schema(required = true)
@@ -42,5 +45,11 @@ public class ServerInfo implements Serializable {
 
 	@Schema(required = true)
 	private long forceRefreshCooldownDuration;
+
+	@Schema(required = true)
+	private boolean initialSetupRequired;
+
+	@Schema(required = true)
+	private int minimumPasswordLength;
 
 }

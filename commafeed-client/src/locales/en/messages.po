@@ -17,7 +17,6 @@ msgstr ""
 msgid "<0>CommaFeed is an open-source project. Sources are hosted on </0><1>GitHub</1>."
 msgstr "<0>CommaFeed is an open-source project. Sources are hosted on </0><1>GitHub</1>."
 
-#: src/components/settings/DisplaySettings.tsx
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "<0>Complete syntax is available </0><1>here</1><2>.</2>"
 msgstr "<0>Complete syntax is available </0><1>here</1><2>.</2>"
@@ -60,6 +59,11 @@ msgstr "Add user"
 #: src/pages/admin/AdminUsersPage.tsx
 msgid "Admin"
 msgstr "Admin"
+
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Admin user name"
+msgstr "Admin user name"
 
 #: src/components/content/add/CategorySelect.tsx
 #: src/components/header/Header.tsx
@@ -122,7 +126,6 @@ msgstr "Are you sure you want to unsubscribe from <0>{feedName}</0>?"
 msgid "Asc"
 msgstr "Asc"
 
-#: src/components/settings/DisplaySettings.tsx
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "Available variables are 'title', 'content', 'url' 'author' and 'categories' and their content is converted to lower case to ease string comparison."
 msgstr "Available variables are 'title', 'content', 'url' 'author' and 'categories' and their content is converted to lower case to ease string comparison."
@@ -139,13 +142,13 @@ msgstr "Back to log in"
 msgid "Blue"
 msgstr "Blue"
 
-#: src/components/KeyboardShortcutsHelp.tsx
-msgid "Browser extension required for Chrome"
-msgstr "Browser extension required for Chrome"
-
 #: src/pages/app/AboutPage.tsx
 msgid "Browser extension"
 msgstr "Browser extension"
+
+#: src/components/KeyboardShortcutsHelp.tsx
+msgid "Browser extension required for Chrome"
+msgstr "Browser extension required for Chrome"
 
 #: src/components/settings/DisplaySettings.tsx
 msgid "Browser tab"
@@ -223,13 +226,13 @@ msgstr "Confirm"
 msgid "Confirm password"
 msgstr "Confirm password"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Content filtering"
-msgstr "Content filtering"
-
 #: src/components/header/ProfileMenu.tsx
 msgid "Cozy"
 msgstr "Cozy"
+
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Create Admin Account"
+msgstr "Create Admin Account"
 
 #: src/components/KeyboardShortcutsHelp.tsx
 msgid "Ctrl"
@@ -315,6 +318,8 @@ msgstr "Drag link to bookmark bar"
 #: src/components/admin/UserEdit.tsx
 #: src/components/settings/ProfileSettings.tsx
 #: src/pages/admin/AdminUsersPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
 #: src/pages/auth/PasswordRecoveryPage.tsx
 #: src/pages/auth/PasswordRecoveryPage.tsx
 msgid "E-mail"
@@ -357,10 +362,6 @@ msgstr "Error"
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "Example: {example}."
 msgstr "Example: {example}."
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Example: <0>url.contains('youtube') or (author eq 'athou' and title.contains('github'))</0>."
-msgstr "Example: <0>url.contains('youtube') or (author eq 'athou' and title.contains('github'))</0>."
 
 #: src/components/header/ProfileMenu.tsx
 msgid "Expanded"
@@ -429,10 +430,6 @@ msgstr "Generate new API key"
 msgid "Generated feed url"
 msgstr "Generated feed url"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Global filter expression"
-msgstr "Global filter expression"
-
 #. placeholder {0}: truncate(props.entry.feedName, 30)
 #: src/components/content/FeedEntryContextMenu.tsx
 msgid "Go to {0}"
@@ -471,10 +468,6 @@ msgid "If not empty, an expression evaluating to 'true' or 'false'. If false, ne
 msgstr "If not empty, an expression evaluating to 'true' or 'false'. If false, new entries for this feed will be marked as read automatically."
 
 #: src/components/settings/DisplaySettings.tsx
-msgid "If not empty, an expression evaluating to 'true' or 'false'. If false, new entries will be marked as read automatically."
-msgstr "If not empty, an expression evaluating to 'true' or 'false'. If false, new entries will be marked as read automatically."
-
-#: src/components/settings/DisplaySettings.tsx
 msgid "If the entry doesn't entirely fit on the screen"
 msgstr "If the entry doesn't entirely fit on the screen"
 
@@ -493,6 +486,10 @@ msgstr "In expanded view, scrolling through entries mark them as read"
 #: src/components/settings/DisplaySettings.tsx
 msgid "Indigo"
 msgstr "Indigo"
+
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Initial Setup"
+msgstr "Initial Setup"
 
 #: src/components/content/FeedEntryContextMenu.tsx
 #: src/components/content/FeedEntryFooter.tsx
@@ -666,10 +663,6 @@ msgstr "No sharing options available."
 msgid "Nothing found"
 msgstr "Nothing found"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Number of characters to show when articles are truncated. Enter value between {TRUNCATE_ARTICLES_MIN}-{TRUNCATE_ARTICLES_MAX} (default {TRUNCATE_ARTICLES_DEFAULT})."
-msgstr "Number of characters to show when articles are truncated. Enter value between {TRUNCATE_ARTICLES_MIN}-{TRUNCATE_ARTICLES_MAX} (default {TRUNCATE_ARTICLES_DEFAULT})."
-
 #: src/pages/app/AboutPage.tsx
 msgid "Oldest first"
 msgstr "Oldest first"
@@ -689,10 +682,6 @@ msgstr "On mobile, show action buttons at the bottom of the screen"
 #: src/components/settings/DisplaySettings.tsx
 msgid "Only applies to compact, cozy and detailed modes"
 msgstr "Only applies to compact, cozy and detailed modes"
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Only show the first N characters of article content. Click the article link to read more."
-msgstr "Only show the first N characters of article content. Click the article link to read more."
 
 #: src/pages/ErrorPage.tsx
 msgid "Oops!"
@@ -773,12 +762,18 @@ msgid "Parent Category"
 msgstr "Parent Category"
 
 #: src/components/admin/UserEdit.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
 #: src/pages/auth/LoginPage.tsx
 #: src/pages/auth/LoginPage.tsx
 #: src/pages/auth/RegistrationPage.tsx
 #: src/pages/auth/RegistrationPage.tsx
 msgid "Password"
 msgstr "Password"
+
+#: src/hooks/useValidationRules.ts
+msgid "Password must be at least {minimumPasswordLength} characters"
+msgstr "Password must be at least {minimumPasswordLength} characters"
 
 #: src/pages/auth/PasswordRecoveryPage.tsx
 msgid "Password Recovery"
@@ -1042,14 +1037,6 @@ msgstr "Toggle sidebar"
 msgid "Toggle starred status of current entry"
 msgstr "Toggle starred status of current entry"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Truncate articles"
-msgstr "Truncate articles"
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Truncation length"
-msgstr "Truncation length"
-
 #: src/pages/auth/LoginPage.tsx
 msgid "Try out CommaFeed with the demo account: demo/demo"
 msgstr "Try out CommaFeed with the demo account: demo/demo"
@@ -1073,10 +1060,6 @@ msgstr "Unstar"
 msgid "Unsubscribe"
 msgstr "Unsubscribe"
 
-#: src/pages/app/FeedDetailsPage.tsx
-msgid "Use custom filter for this feed"
-msgstr "Use custom filter for this feed"
-
 #: src/components/settings/ProfileSettings.tsx
 msgid "User name"
 msgstr "User name"
@@ -1098,9 +1081,9 @@ msgstr "Warning"
 msgid "Website"
 msgstr "Website"
 
-#: src/pages/app/FeedDetailsPage.tsx
-msgid "When enabled, this feed will use its own filter instead of the global filter"
-msgstr "When enabled, this feed will use its own filter instead of the global filter"
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Welcome! This appears to be the first time you're running CommaFeed. Please create an administrator account to get started."
+msgstr "Welcome! This appears to be the first time you're running CommaFeed. Please create an administrator account to get started."
 
 #: src/components/settings/DisplaySettings.tsx
 msgid "Yellow"

@@ -13,6 +13,7 @@ import { useAppDispatch, useAppSelector } from "@/app/store"
 import type { ProfileModificationRequest } from "@/app/types"
 import { reloadProfile } from "@/app/user/thunks"
 import { Alert } from "@/components/Alert"
+import { useValidationRules } from "@/hooks/useValidationRules"
 
 interface FormData extends ProfileModificationRequest {
     newPasswordConfirmation?: string
@@ -20,13 +21,17 @@ interface FormData extends ProfileModificationRequest {
 
 export function ProfileSettings() {
     const profile = useAppSelector(state => state.user.profile)
+    const serverInfos = useAppSelector(state => state.server.serverInfos)
     const dispatch = useAppDispatch()
     const { _ } = useLingui()
+    const validationRules = useValidationRules()
 
     const form = useForm<FormData>({
         validate: {
+            newPassword: validationRules.password,
             newPasswordConfirmation: (value, values) => (value !== values.newPassword ? _(msg`Passwords do not match`) : null),
         },
+        validateInputOnChange: true,
     })
     const { setValues } = form
 
@@ -134,7 +139,12 @@ export function ProfileSettings() {
                         required
                         {...form.getInputProps("currentPassword")}
                     />
-                    <TextInput type="email" label={<Trans>E-mail</Trans>} {...form.getInputProps("email")} required />
+                    <TextInput
+                        type="email"
+                        label={<Trans>E-mail</Trans>}
+                        {...form.getInputProps("email")}
+                        required={serverInfos?.emailAddressRequired}
+                    />
                     <PasswordInput
                         label={<Trans>New password</Trans>}
                         description={<Trans>Changing password will generate a new API key</Trans>}

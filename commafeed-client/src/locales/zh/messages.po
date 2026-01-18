@@ -17,7 +17,6 @@ msgstr ""
 msgid "<0>CommaFeed is an open-source project. Sources are hosted on </0><1>GitHub</1>."
 msgstr "<0>CommaFeed是一个开源项目，源码托管在 </0><1>GitHub</1>。"
 
-#: src/components/settings/DisplaySettings.tsx
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "<0>Complete syntax is available </0><1>here</1><2>.</2>"
 msgstr "<0>可以使用完整的语法 </0><1>详情</1><2>.</2>"
@@ -60,6 +59,11 @@ msgstr "添加用户"
 #: src/pages/admin/AdminUsersPage.tsx
 msgid "Admin"
 msgstr "管理员"
+
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Admin user name"
+msgstr "管理员用户名"
 
 #: src/components/content/add/CategorySelect.tsx
 #: src/components/header/Header.tsx
@@ -122,7 +126,6 @@ msgstr "您确定要退订 <0>{feedName}</0> 吗？"
 msgid "Asc"
 msgstr "升序"
 
-#: src/components/settings/DisplaySettings.tsx
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "Available variables are 'title', 'content', 'url' 'author' and 'categories' and their content is converted to lower case to ease string comparison."
 msgstr "可用变量为'title'、'content'、'url'、'author'和'categories'，它们的内容被转换为小写以方便字符串比较。"
@@ -139,12 +142,12 @@ msgstr "返回登录"
 msgid "Blue"
 msgstr "蓝"
 
-#: src/components/KeyboardShortcutsHelp.tsx
-msgid "Browser extension required for Chrome"
-msgstr "浏览器扩展"
-
 #: src/pages/app/AboutPage.tsx
 msgid "Browser extension"
+msgstr "浏览器扩展"
+
+#: src/components/KeyboardShortcutsHelp.tsx
+msgid "Browser extension required for Chrome"
 msgstr "浏览器扩展"
 
 #: src/components/settings/DisplaySettings.tsx
@@ -223,13 +226,13 @@ msgstr "确认"
 msgid "Confirm password"
 msgstr "确认密码"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Content filtering"
-msgstr ""
-
 #: src/components/header/ProfileMenu.tsx
 msgid "Cozy"
 msgstr "宽松"
+
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Create Admin Account"
+msgstr "创建管理员帐号"
 
 #: src/components/KeyboardShortcutsHelp.tsx
 msgid "Ctrl"
@@ -315,6 +318,8 @@ msgstr "拖动链接到书签栏"
 #: src/components/admin/UserEdit.tsx
 #: src/components/settings/ProfileSettings.tsx
 #: src/pages/admin/AdminUsersPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
 #: src/pages/auth/PasswordRecoveryPage.tsx
 #: src/pages/auth/PasswordRecoveryPage.tsx
 msgid "E-mail"
@@ -357,10 +362,6 @@ msgstr "错误"
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "Example: {example}."
 msgstr "示例：{示例}。"
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Example: <0>url.contains('youtube') or (author eq 'athou' and title.contains('github'))</0>."
-msgstr ""
 
 #: src/components/header/ProfileMenu.tsx
 msgid "Expanded"
@@ -429,10 +430,6 @@ msgstr "生成新的 API 密钥"
 msgid "Generated feed url"
 msgstr "生成信息流网址"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Global filter expression"
-msgstr ""
-
 #. placeholder {0}: truncate(props.entry.feedName, 30)
 #: src/components/content/FeedEntryContextMenu.tsx
 msgid "Go to {0}"
@@ -471,10 +468,6 @@ msgid "If not empty, an expression evaluating to 'true' or 'false'. If false, ne
 msgstr "如果不为空，则表达式的计算结果为“真”或“假”。如果为“假”，则此信息流的新条目将自动标记为已读。"
 
 #: src/components/settings/DisplaySettings.tsx
-msgid "If not empty, an expression evaluating to 'true' or 'false'. If false, new entries will be marked as read automatically."
-msgstr ""
-
-#: src/components/settings/DisplaySettings.tsx
 msgid "If the entry doesn't entirely fit on the screen"
 msgstr "如果条目不能完全显示在屏幕上"
 
@@ -493,6 +486,10 @@ msgstr "在展开视图中，滚动条目将它们标记为已读"
 #: src/components/settings/DisplaySettings.tsx
 msgid "Indigo"
 msgstr "靛蓝"
+
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Initial Setup"
+msgstr "初始化设置"
 
 #: src/components/content/FeedEntryContextMenu.tsx
 #: src/components/content/FeedEntryFooter.tsx
@@ -666,10 +663,6 @@ msgstr "没有可用的分享选项"
 msgid "Nothing found"
 msgstr "没有找到"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Number of characters to show when articles are truncated. Enter value between {TRUNCATE_ARTICLES_MIN}-{TRUNCATE_ARTICLES_MAX} (default {TRUNCATE_ARTICLES_DEFAULT})."
-msgstr ""
-
 #: src/pages/app/AboutPage.tsx
 msgid "Oldest first"
 msgstr "最早的优先"
@@ -689,10 +682,6 @@ msgstr "在移动端，显示屏幕底部的操作按钮"
 #: src/components/settings/DisplaySettings.tsx
 msgid "Only applies to compact, cozy and detailed modes"
 msgstr "仅适用于紧凑、宽松和详细模式"
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Only show the first N characters of article content. Click the article link to read more."
-msgstr ""
 
 #: src/pages/ErrorPage.tsx
 msgid "Oops!"
@@ -773,12 +762,18 @@ msgid "Parent Category"
 msgstr "父类别"
 
 #: src/components/admin/UserEdit.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
 #: src/pages/auth/LoginPage.tsx
 #: src/pages/auth/LoginPage.tsx
 #: src/pages/auth/RegistrationPage.tsx
 #: src/pages/auth/RegistrationPage.tsx
 msgid "Password"
 msgstr "密码"
+
+#: src/hooks/useValidationRules.ts
+msgid "Password must be at least {minimumPasswordLength} characters"
+msgstr "密码最少需要 {minimumPasswordLength} 个字符"
 
 #: src/pages/auth/PasswordRecoveryPage.tsx
 msgid "Password Recovery"
@@ -1042,14 +1037,6 @@ msgstr "切换侧边栏"
 msgid "Toggle starred status of current entry"
 msgstr "切换当前条目的星标状态"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Truncate articles"
-msgstr ""
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Truncation length"
-msgstr ""
-
 #: src/pages/auth/LoginPage.tsx
 msgid "Try out CommaFeed with the demo account: demo/demo"
 msgstr "使用演示帐户试用 CommaFeed：demo/demo"
@@ -1073,10 +1060,6 @@ msgstr "取消星标"
 msgid "Unsubscribe"
 msgstr "取消订阅"
 
-#: src/pages/app/FeedDetailsPage.tsx
-msgid "Use custom filter for this feed"
-msgstr ""
-
 #: src/components/settings/ProfileSettings.tsx
 msgid "User name"
 msgstr "用户名"
@@ -1098,9 +1081,9 @@ msgstr "警告"
 msgid "Website"
 msgstr "网站"
 
-#: src/pages/app/FeedDetailsPage.tsx
-msgid "When enabled, this feed will use its own filter instead of the global filter"
-msgstr ""
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Welcome! This appears to be the first time you're running CommaFeed. Please create an administrator account to get started."
+msgstr "欢迎！当前页仅当您第一次使用CommaFeed时出现，请创建一个管理员帐号以开始使用。"
 
 #: src/components/settings/DisplaySettings.tsx
 msgid "Yellow"

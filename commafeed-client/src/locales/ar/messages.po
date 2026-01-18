@@ -17,7 +17,6 @@ msgstr ""
 msgid "<0>CommaFeed is an open-source project. Sources are hosted on </0><1>GitHub</1>."
 msgstr ""
 
-#: src/components/settings/DisplaySettings.tsx
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "<0>Complete syntax is available </0><1>here</1><2>.</2>"
 msgstr ""
@@ -60,6 +59,11 @@ msgstr "إضافة مستخدم"
 #: src/pages/admin/AdminUsersPage.tsx
 msgid "Admin"
 msgstr "إداري"
+
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Admin user name"
+msgstr ""
 
 #: src/components/content/add/CategorySelect.tsx
 #: src/components/header/Header.tsx
@@ -122,7 +126,6 @@ msgstr "هل أنت متأكد أنك تريد إلغاء الاشتراك من 
 msgid "Asc"
 msgstr "تصاعدي"
 
-#: src/components/settings/DisplaySettings.tsx
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "Available variables are 'title', 'content', 'url' 'author' and 'categories' and their content is converted to lower case to ease string comparison."
 msgstr "المتغيرات المتاحة هي \"العنوان\" و \"المحتوى\" و \"url\" و \"المؤلف\" و \"الفئات\" ويتم تحويل محتواها إلى أحرف صغيرة لتسهيل مقارنة السلسلة."
@@ -139,12 +142,12 @@ msgstr "العودة لتسجيل الدخول"
 msgid "Blue"
 msgstr ""
 
-#: src/components/KeyboardShortcutsHelp.tsx
-msgid "Browser extension required for Chrome"
-msgstr ""
-
 #: src/pages/app/AboutPage.tsx
 msgid "Browser extension"
+msgstr ""
+
+#: src/components/KeyboardShortcutsHelp.tsx
+msgid "Browser extension required for Chrome"
 msgstr ""
 
 #: src/components/settings/DisplaySettings.tsx
@@ -223,13 +226,13 @@ msgstr "تأكيد"
 msgid "Confirm password"
 msgstr "تأكيد كلمة المرور"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Content filtering"
-msgstr ""
-
 #: src/components/header/ProfileMenu.tsx
 msgid "Cozy"
 msgstr "دافئ"
+
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Create Admin Account"
+msgstr ""
 
 #: src/components/KeyboardShortcutsHelp.tsx
 msgid "Ctrl"
@@ -315,6 +318,8 @@ msgstr "اسحب الرابط إلى شريط الإشارات"
 #: src/components/admin/UserEdit.tsx
 #: src/components/settings/ProfileSettings.tsx
 #: src/pages/admin/AdminUsersPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
 #: src/pages/auth/PasswordRecoveryPage.tsx
 #: src/pages/auth/PasswordRecoveryPage.tsx
 msgid "E-mail"
@@ -357,10 +362,6 @@ msgstr "خطأ"
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "Example: {example}."
 msgstr "مثال: {مثال}."
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Example: <0>url.contains('youtube') or (author eq 'athou' and title.contains('github'))</0>."
-msgstr ""
 
 #: src/components/header/ProfileMenu.tsx
 msgid "Expanded"
@@ -429,10 +430,6 @@ msgstr "إنشاء مفتاح API جديد"
 msgid "Generated feed url"
 msgstr "رابط الخلاصة المولدة"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Global filter expression"
-msgstr ""
-
 #. placeholder {0}: truncate(props.entry.feedName, 30)
 #: src/components/content/FeedEntryContextMenu.tsx
 msgid "Go to {0}"
@@ -471,10 +468,6 @@ msgid "If not empty, an expression evaluating to 'true' or 'false'. If false, ne
 msgstr "إذا لم يكن فارغًا ، فسيتم تقييم التعبير إلى \"صواب\" أو \"خطأ\". "
 
 #: src/components/settings/DisplaySettings.tsx
-msgid "If not empty, an expression evaluating to 'true' or 'false'. If false, new entries will be marked as read automatically."
-msgstr ""
-
-#: src/components/settings/DisplaySettings.tsx
 msgid "If the entry doesn't entirely fit on the screen"
 msgstr ""
 
@@ -492,6 +485,10 @@ msgstr "في العرض الموسع ، التمرير عبر الإدخالات
 
 #: src/components/settings/DisplaySettings.tsx
 msgid "Indigo"
+msgstr ""
+
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Initial Setup"
 msgstr ""
 
 #: src/components/content/FeedEntryContextMenu.tsx
@@ -666,10 +663,6 @@ msgstr ""
 msgid "Nothing found"
 msgstr "لم يتم العثور على شيء"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Number of characters to show when articles are truncated. Enter value between {TRUNCATE_ARTICLES_MIN}-{TRUNCATE_ARTICLES_MAX} (default {TRUNCATE_ARTICLES_DEFAULT})."
-msgstr ""
-
 #: src/pages/app/AboutPage.tsx
 msgid "Oldest first"
 msgstr "الأقدم أولا"
@@ -688,10 +681,6 @@ msgstr ""
 
 #: src/components/settings/DisplaySettings.tsx
 msgid "Only applies to compact, cozy and detailed modes"
-msgstr ""
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Only show the first N characters of article content. Click the article link to read more."
 msgstr ""
 
 #: src/pages/ErrorPage.tsx
@@ -773,12 +762,18 @@ msgid "Parent Category"
 msgstr "الفئة الأصل"
 
 #: src/components/admin/UserEdit.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
 #: src/pages/auth/LoginPage.tsx
 #: src/pages/auth/LoginPage.tsx
 #: src/pages/auth/RegistrationPage.tsx
 #: src/pages/auth/RegistrationPage.tsx
 msgid "Password"
 msgstr "كلمة المرور"
+
+#: src/hooks/useValidationRules.ts
+msgid "Password must be at least {minimumPasswordLength} characters"
+msgstr ""
 
 #: src/pages/auth/PasswordRecoveryPage.tsx
 msgid "Password Recovery"
@@ -1042,14 +1037,6 @@ msgstr ""
 msgid "Toggle starred status of current entry"
 msgstr ""
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Truncate articles"
-msgstr ""
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Truncation length"
-msgstr ""
-
 #: src/pages/auth/LoginPage.tsx
 msgid "Try out CommaFeed with the demo account: demo/demo"
 msgstr "جرب CommaFeed باستخدام الحساب التجريبي: تجريبي / تجريبي"
@@ -1073,10 +1060,6 @@ msgstr "إلغاء النجم"
 msgid "Unsubscribe"
 msgstr "إلغاء الاشتراك"
 
-#: src/pages/app/FeedDetailsPage.tsx
-msgid "Use custom filter for this feed"
-msgstr ""
-
 #: src/components/settings/ProfileSettings.tsx
 msgid "User name"
 msgstr "اسم المستخدم"
@@ -1098,8 +1081,8 @@ msgstr "تحذير"
 msgid "Website"
 msgstr "موقع الكتروني"
 
-#: src/pages/app/FeedDetailsPage.tsx
-msgid "When enabled, this feed will use its own filter instead of the global filter"
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Welcome! This appears to be the first time you're running CommaFeed. Please create an administrator account to get started."
 msgstr ""
 
 #: src/components/settings/DisplaySettings.tsx

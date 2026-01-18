@@ -211,17 +211,26 @@ export interface RegistrationRequest {
     email: string
 }
 
+export interface InitialSetupRequest {
+    name: string
+    password: string
+    email?: string
+}
+
 export interface ServerInfo {
     announcement?: string
     version: string
     gitCommit: string
     allowRegistrations: boolean
+    emailAddressRequired: boolean
     smtpEnabled: boolean
     demoAccountEnabled: boolean
     websocketEnabled: boolean
     websocketPingInterval: number
     treeReloadInterval: number
     forceRefreshCooldownDuration: number
+    initialSetupRequired: boolean
+    minimumPasswordLength: number
 }
 
 export interface SharingSettings {
@@ -236,7 +245,7 @@ export interface SharingSettings {
 }
 
 export interface Settings {
-    language: string
+    language?: string
     readingMode: ReadingMode
     readingOrder: ReadingOrder
     showRead: boolean

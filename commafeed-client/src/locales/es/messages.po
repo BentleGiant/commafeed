@@ -18,7 +18,6 @@ msgstr ""
 msgid "<0>CommaFeed is an open-source project. Sources are hosted on </0><1>GitHub</1>."
 msgstr "<0>CommaFeed es un proyecto de código abierto. El código fuente está hospedado en </0><1>GitHub</1>."
 
-#: src/components/settings/DisplaySettings.tsx
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "<0>Complete syntax is available </0><1>here</1><2>.</2>"
 msgstr "<0>La sintaxis completa está disponible </0><1>aquí</1><2>.</2>"
@@ -61,6 +60,11 @@ msgstr "Añadir usuario"
 #: src/pages/admin/AdminUsersPage.tsx
 msgid "Admin"
 msgstr "Administrador"
+
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Admin user name"
+msgstr ""
 
 #: src/components/content/add/CategorySelect.tsx
 #: src/components/header/Header.tsx
@@ -123,7 +127,6 @@ msgstr "¿Estás seguro de que deseas darte de baja de <0>{feedName}</0>?"
 msgid "Asc"
 msgstr "Asc"
 
-#: src/components/settings/DisplaySettings.tsx
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "Available variables are 'title', 'content', 'url' 'author' and 'categories' and their content is converted to lower case to ease string comparison."
 msgstr "Las variables disponibles son 'título', 'contenido', 'url', 'autor' y 'categorías' y su contenido se convierte a minúsculas para facilitar la comparación de cadenas."
@@ -140,13 +143,13 @@ msgstr "Volver a iniciar sesión"
 msgid "Blue"
 msgstr ""
 
-#: src/components/KeyboardShortcutsHelp.tsx
-msgid "Browser extension required for Chrome"
-msgstr "Se requiere extensión de navegador para Chrome"
-
 #: src/pages/app/AboutPage.tsx
 msgid "Browser extension"
 msgstr "Extensión del navegador"
+
+#: src/components/KeyboardShortcutsHelp.tsx
+msgid "Browser extension required for Chrome"
+msgstr "Se requiere extensión de navegador para Chrome"
 
 #: src/components/settings/DisplaySettings.tsx
 msgid "Browser tab"
@@ -224,13 +227,13 @@ msgstr "Confirmar"
 msgid "Confirm password"
 msgstr "Confirmar contraseña"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Content filtering"
-msgstr ""
-
 #: src/components/header/ProfileMenu.tsx
 msgid "Cozy"
 msgstr "Acogedor"
+
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Create Admin Account"
+msgstr ""
 
 #: src/components/KeyboardShortcutsHelp.tsx
 msgid "Ctrl"
@@ -316,6 +319,8 @@ msgstr "Arrastra el enlace a la barra de marcadores"
 #: src/components/admin/UserEdit.tsx
 #: src/components/settings/ProfileSettings.tsx
 #: src/pages/admin/AdminUsersPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
 #: src/pages/auth/PasswordRecoveryPage.tsx
 #: src/pages/auth/PasswordRecoveryPage.tsx
 msgid "E-mail"
@@ -358,10 +363,6 @@ msgstr "Error"
 #: src/pages/app/FeedDetailsPage.tsx
 msgid "Example: {example}."
 msgstr "Ejemplo: {ejemplo}."
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Example: <0>url.contains('youtube') or (author eq 'athou' and title.contains('github'))</0>."
-msgstr ""
 
 #: src/components/header/ProfileMenu.tsx
 msgid "Expanded"
@@ -430,10 +431,6 @@ msgstr "Generar nueva clave API"
 msgid "Generated feed url"
 msgstr "URL del feed generado"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Global filter expression"
-msgstr ""
-
 #. placeholder {0}: truncate(props.entry.feedName, 30)
 #: src/components/content/FeedEntryContextMenu.tsx
 msgid "Go to {0}"
@@ -472,10 +469,6 @@ msgid "If not empty, an expression evaluating to 'true' or 'false'. If false, ne
 msgstr "Si no está vacía, una expresión que se evalúa como \"verdadera\" o \"falso\". Si es falso, las nuevas entradas de este feed se marcarán como leídas automáticamente."
 
 #: src/components/settings/DisplaySettings.tsx
-msgid "If not empty, an expression evaluating to 'true' or 'false'. If false, new entries will be marked as read automatically."
-msgstr ""
-
-#: src/components/settings/DisplaySettings.tsx
 msgid "If the entry doesn't entirely fit on the screen"
 msgstr "Si la entrada no cabe completamente en la pantalla"
 
@@ -493,6 +486,10 @@ msgstr "En la vista ampliada, al desplazarse por las entradas marcarlas como le�
 
 #: src/components/settings/DisplaySettings.tsx
 msgid "Indigo"
+msgstr ""
+
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Initial Setup"
 msgstr ""
 
 #: src/components/content/FeedEntryContextMenu.tsx
@@ -667,10 +664,6 @@ msgstr "No hay opciones para compartir disponibles."
 msgid "Nothing found"
 msgstr "Nada encontrado"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Number of characters to show when articles are truncated. Enter value between {TRUNCATE_ARTICLES_MIN}-{TRUNCATE_ARTICLES_MAX} (default {TRUNCATE_ARTICLES_DEFAULT})."
-msgstr ""
-
 #: src/pages/app/AboutPage.tsx
 msgid "Oldest first"
 msgstr "Las más antiguas primero"
@@ -690,10 +683,6 @@ msgstr "En dispositivos móviles, mostrar los botones de acción en la parte inf
 #: src/components/settings/DisplaySettings.tsx
 msgid "Only applies to compact, cozy and detailed modes"
 msgstr "Sólo se aplica a los modos compacto, acogedor y detallado"
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Only show the first N characters of article content. Click the article link to read more."
-msgstr ""
 
 #: src/pages/ErrorPage.tsx
 msgid "Oops!"
@@ -774,12 +763,18 @@ msgid "Parent Category"
 msgstr "Categoría principal"
 
 #: src/components/admin/UserEdit.tsx
+#: src/pages/auth/InitialSetupPage.tsx
+#: src/pages/auth/InitialSetupPage.tsx
 #: src/pages/auth/LoginPage.tsx
 #: src/pages/auth/LoginPage.tsx
 #: src/pages/auth/RegistrationPage.tsx
 #: src/pages/auth/RegistrationPage.tsx
 msgid "Password"
 msgstr "Contraseña"
+
+#: src/hooks/useValidationRules.ts
+msgid "Password must be at least {minimumPasswordLength} characters"
+msgstr ""
 
 #: src/pages/auth/PasswordRecoveryPage.tsx
 msgid "Password Recovery"
@@ -1043,14 +1038,6 @@ msgstr "Alternar barra lateral"
 msgid "Toggle starred status of current entry"
 msgstr "Alternar estado destacado de la entrada actual"
 
-#: src/components/settings/DisplaySettings.tsx
-msgid "Truncate articles"
-msgstr ""
-
-#: src/components/settings/DisplaySettings.tsx
-msgid "Truncation length"
-msgstr ""
-
 #: src/pages/auth/LoginPage.tsx
 msgid "Try out CommaFeed with the demo account: demo/demo"
 msgstr "Prueba CommaFeed con la cuenta de demostración: demo/demo"
@@ -1074,10 +1061,6 @@ msgstr "Desmarcar"
 msgid "Unsubscribe"
 msgstr "Cancelar suscripción"
 
-#: src/pages/app/FeedDetailsPage.tsx
-msgid "Use custom filter for this feed"
-msgstr ""
-
 #: src/components/settings/ProfileSettings.tsx
 msgid "User name"
 msgstr "Nombre de usuario"
@@ -1099,8 +1082,8 @@ msgstr "Advertencia"
 msgid "Website"
 msgstr "Sitio web"
 
-#: src/pages/app/FeedDetailsPage.tsx
-msgid "When enabled, this feed will use its own filter instead of the global filter"
+#: src/pages/auth/InitialSetupPage.tsx
+msgid "Welcome! This appears to be the first time you're running CommaFeed. Please create an administrator account to get started."
 msgstr ""
 
 #: src/components/settings/DisplaySettings.tsx
