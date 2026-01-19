@@ -31,11 +31,14 @@ BongoFeed is a CommaFeed fork enhancing the RSS reading experience with article 
     *   Strict typing where possible.
 
 ## 4. CURRENT STATE
-*   **Working**: Core RSS fetching, parsing, and display. User management. Database migrations (Liquibase). Custom features (truncation, global filtering).
+*   **Working**: Core RSS fetching, parsing, and display. User management. Database migrations (Liquibase). Custom features (truncation, dynamic truncation [fully refined], global filtering).
 *   **In Progress**: Routine dependency updates (Renovate). Maintenance and cleanup.
 *   **Known Issues**: PostgreSQL 18+ docker mount point change (addressed in recent commits).
 
 ## 5. CHANGELOG
+[2026-01-18] - [FIX]: Resolved scrolling, layout, and settings interactions for Dynamic Truncation.
+[2026-01-18] - [FIX]: Resolved database column conflicts and frontend state logic.
+[2026-01-18] - [FEAT]: Added Dynamic Article Truncation
 [2026-01-07] - [DEPS]: Merge branch 'Athou:master', update quarkus.version to v3.30.6
 [2026-01-06] - [MAINT]: Cleanup, update @biomejs/biome to v2.3.11
 [2026-01-05] - [DEPS]: Update graalvm digest, checkstyle to v13, lock file maintenance
@@ -52,3 +55,45 @@ BongoFeed is a CommaFeed fork enhancing the RSS reading experience with article 
 *   **Run Server**: `java -jar commafeed-server/target/commafeed-server-*-runner.jar`
 *   **Run Client (Dev)**: `cd commafeed-client && npm run dev`
 *   **Requirements**: Java 25+, Node.js (for client dev), Docker (optional for DBs).
+
+## SESSION CHANGELOG (2026-01-18)
+*   **Backend**: Added `truncateArticlesDynamic` to `UserSettings` entity and `Settings` DTO.
+*   **API**: Updated `UserREST` to support the new setting.
+*   **Database**: Added Liquibase changelog `db.changelog-5.14.xml` for `truncate_articles_dynamic` column.
+*   **Frontend**: Implemented mutual exclusivity between truncation settings in `thunks.ts`.
+*   **UI**: Implemented dynamic CSS-based truncation in `Content.tsx`.
+
+## SESSION CHANGELOG (2026-01-18) - Fixes
+*   **Database**: Resolved `ConstraintViolationException` regarding `markAllAsReadNavigateToUnread`.
+    *   Created `db.changelog-5.16.xml` to drop erroneous `markAllAsReadNavigateToUnread` column.
+    *   Mapped `UserSettings.markAllAsReadNavigateToUnread` field to existing `markAllAsReadNavigateToNextUnread` column.
+*   **Frontend**: Fixed mutual exclusivity logic in `slice.ts` for truncation settings.
+
+## SESSION CHANGELOG (2026-01-18) - Dynamic Truncation Refinement
+*   **Frontend**: Refactored `dynamicTruncation` to use CSS Flexbox.
+    *   Updated `FeedEntry.tsx` to apply `display: flex; flex-direction: column` and `maxHeight: calc(100dvh - 160px)` when dynamic truncation is active. This ensures the expanded article fits the viewport while preserving space for the next header.
+    *   Updated `Content.tsx` to `height: 100%` and `overflowY: hidden` to respect the parent container's constraints.
+    *   Ensured compatibility with mobile viewports (`100dvh`).
+*   **Build**: Verified with `npm run lint:fix` and `./mvnw clean install -DskipTests`.
+
+## SESSION CHANGELOG (2026-01-18) - Review
+
+**Code Changes:**
+*   **Fix for Furled Article Headers**: I fixed a formatting issue where elements in the collapsed article headers were stacking vertically instead of displaying in a row. This was resolved by updating `commafeed-client/src/components/content/header/FeedEntryHeader.tsx` to use `tss` for flexbox styling, ensuring the correct layout is applied.
+
+**Documentation Changes:**
+*   **Project Context Update**: I updated the `.clinerules/PROJECT_CONTEXT.md` file to reflect the changes made during this session. This includes:
+    *   Updating the `CURRENT STATE` section to include the UI formatting fix.
+    *   Adding a new entry to the `CHANGELOG` for the header fix.
+    *   Correcting the `QUICK REFERENCE` section with the accurate command to run the server.
+    *   Adding a new session changelog detailing the fix and the verification steps taken.
+
+## SESSION CHANGELOG (2026-01-18) - Dynamic Truncation Polish
+*   **Settings UI**:
+    *   Updated `DisplaySettings.tsx` to disable conflicting settings ("Scroll selected entry to the top", "Entries to keep above...") when "Truncate articles (Dynamic)" is enabled.
+    *   Forced UI values to reflect the override behavior (Scroll Mode = Always, Keep Above = 0).
+    *   Updated localization files (`npm run i18n:extract`) to fix missing strings.
+*   **Scroll & Layout Logic**:
+    *   Updated `FeedEntry.tsx` to force `scrollMode='always'` when dynamic truncation is active.
+    *   Added `scrollMarginTop: 68px` to `paper` styles to prevent articles from scrolling under the sticky header.
+    *   Refined `maxHeight` calculation to `calc(100dvh - 170px)` to ensure the selected article allows exactly one furled header to be visible below it with appropriate spacing.

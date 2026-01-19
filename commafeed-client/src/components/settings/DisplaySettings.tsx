@@ -283,21 +283,24 @@ export function DisplaySettings() {
 
             <Radio.Group
                 label={<Trans>Scroll selected entry to the top of the page</Trans>}
-                value={scrollMode}
+                value={truncateArticlesDynamic ? "always" : scrollMode}
                 onChange={async value => await dispatch(changeScrollMode(value as ScrollMode))}
             >
                 <Group mt="xs">
                     {Object.entries(scrollModeOptions).map(e => (
-                        <Radio key={e[0]} value={e[0]} label={e[1]} />
+                        <Radio key={e[0]} value={e[0]} label={e[1]} disabled={truncateArticlesDynamic} />
                     ))}
                 </Group>
             </Radio.Group>
 
             <NumberInput
                 label={<Trans>Entries to keep above the selected entry when scrolling</Trans>}
-                description={<Trans>Only applies to compact, cozy and detailed modes</Trans>}
+                description={
+                    <Trans>Only applies to compact, cozy and detailed modes. Does not apply to Truncate articles (Dynamic).</Trans>
+                }
                 min={0}
-                value={entriesToKeepOnTop}
+                value={truncateArticlesDynamic ? 0 : entriesToKeepOnTop}
+                disabled={truncateArticlesDynamic}
                 onChange={async value => await dispatch(changeEntriesToKeepOnTopWhenScrolling(+value))}
             />
 
