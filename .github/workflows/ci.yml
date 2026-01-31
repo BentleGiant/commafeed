@@ -169,8 +169,8 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64/v8
           tags: |
-            ghcr.io/bentlegiant/commafeed:latest-${{ matrix.database }}
-            ghcr.io/bentlegiant/commafeed:${{ github.ref_name }}-${{ matrix.database }}
+            ghcr.io/bentlegiant/commafeed-extra:latest-${{ matrix.database }}
+            ghcr.io/bentlegiant/commafeed-extra:${{ github.ref_name }}-${{ matrix.database }}
 
       - name: Docker build and push tag - jvm
         uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6
@@ -181,8 +181,8 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64/v8
           tags: |
-            ghcr.io/bentlegiant/commafeed:latest-${{ matrix.database }}-jvm
-            ghcr.io/bentlegiant/commafeed:${{ github.ref_name }}-${{ matrix.database }}-jvm
+            ghcr.io/bentlegiant/commafeed-extra:latest-${{ matrix.database }}-jvm
+            ghcr.io/bentlegiant/commafeed-extra:${{ github.ref_name }}-${{ matrix.database }}-jvm
 
       ## build and push master
       - name: Docker build and push master - native
@@ -193,7 +193,7 @@ jobs:
           file: commafeed-server/src/main/docker/Dockerfile.native
           push: true
           platforms: linux/amd64,linux/arm64/v8
-          tags: ghcr.io/bentlegiant/commafeed:master-${{ matrix.database }}
+          tags: ghcr.io/bentlegiant/commafeed-extra:master-${{ matrix.database }}
 
       - name: Docker build and push master - jvm
         uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6
@@ -203,7 +203,7 @@ jobs:
           file: commafeed-server/src/main/docker/Dockerfile.jvm
           push: true
           platforms: linux/amd64,linux/arm64/v8
-          tags: ghcr.io/bentlegiant/commafeed:master-${{ matrix.database }}-jvm
+          tags: ghcr.io/bentlegiant/commafeed-extra:master-${{ matrix.database }}-jvm
 
   release:
     runs-on: ubuntu-latest
