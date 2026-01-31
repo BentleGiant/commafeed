@@ -34,6 +34,7 @@ import { TagDetailsPage } from "@/pages/app/TagDetailsPage"
 import { InitialSetupPage } from "@/pages/auth/InitialSetupPage"
 import { LoginPage } from "@/pages/auth/LoginPage"
 import { PasswordRecoveryPage } from "@/pages/auth/PasswordRecoveryPage"
+import { PasswordResetPage } from "@/pages/auth/PasswordResetPage"
 import { RegistrationPage } from "@/pages/auth/RegistrationPage"
 import { WelcomePage } from "@/pages/WelcomePage"
 
@@ -88,6 +89,7 @@ function AppRoutes() {
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegistrationPage />} />
             <Route path="passwordRecovery" element={<PasswordRecoveryPage />} />
+            <Route path="passwordReset" element={<PasswordResetPage />} />
             <Route path="app" element={<Layout header={<Header />} sidebar={<Tree />} sidebarVisible={sidebarVisible} />}>
                 <Route path="category">
                     <Route path=":id" element={<FeedEntriesPage sourceType="category" />} />
@@ -193,6 +195,8 @@ function CustomJsHandler() {
         document.body.appendChild(script)
 
         setScriptLoaded(true)
+
+        return () => script.remove()
     }, [scriptLoaded, loading])
 
     return null
@@ -205,6 +209,8 @@ function CustomCssHandler() {
         link.type = "text/css"
         link.href = "custom_css.css"
         document.head.appendChild(link)
+
+        return () => link.remove()
     }, [])
 
     return null
